@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H&M Chile | Experiencia de Compra & Tallas Extendidas</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            hm: {
+              red: '#E50010',
+              redHover: '#B8000D',
+              dark: '#222222',
+              charcoal: '#1A1A1A',
+              muted: '#707070',
+              border: '#E4E4E4',
+              softBg: '#F9F8F6',
+              stone: '#F4F4F4',
+              badgeGreen: '#00875A'
+            }
+          },
+          letterSpacing: {
+            brand: '0.08em',
+            wideTight: '0.03em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* H&M Authentic Brand Aesthetic details */
+    body {
+      color: #222222;
+      background-color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #c8c8c8;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .star-rate-icon {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .star-rate-icon:hover {
+      transform: scale(1.15);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #222222;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .tag-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen selection:bg-neutral-900 selection:text-white">
+
+  <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
+  <div class="bg-[#F4F4F4] text-[#222222] text-[11px] font-normal tracking-wide py-2.5 px-4 text-center border-b border-hm-border">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <span class="hidden md:inline-block text-hm-muted">Chile | ES ($ CLP)</span>
+      <p class="w-full md:w-auto font-medium">
+        Envío estándar gratuito para H&M Members en compras sobre $39.990 · <strong>Devoluciones presenciales gratuitas</strong> en 30 días
+      </p>
+      <div class="hidden md:flex items-center space-x-5 text-hm-muted">
+        <a href="#post-venta" class="hover:text-hm-dark transition">Servicio al Cliente</a>
+        <a href="#cambios-presenciales" class="hover:text-hm-dark transition">Buscar Tienda</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-hm-border">
+    <!-- Top Utility Line -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Left: Menu or Categories -->
+        <div class="flex items-center space-x-6">
+          <button id="mobileMenuBtn" class="lg:hidden p-2 text-hm-dark hover:text-hm-red focus:outline-none" aria-label="Abrir menú de navegación">
+            <i data-lucide="menu" class="w-6 h-6 stroke-[1.5]"></i>
+          </button>
+
+          <nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-hm-dark">
+            <a href="#mujer" class="nav-link py-1 hover:text-hm-red transition">Mujer</a>
+            <a href="#hombre" class="nav-link py-1 hover:text-hm-red transition">Hombre</a>
+            <a href="#divided" class="nav-link py-1 hover:text-hm-red transition">Divided</a>
+            <a href="#kids" class="nav-link py-1 hover:text-hm-red transition">Niños</a>
+            <a href="#tallas-catalogo" class="nav-link py-1 text-hm-red font-bold">Tallas Inclusivas</a>
+            <a href="#cambios-presenciales" class="nav-link py-1 hover:text-hm-red transition">Cambios & Tiendas</a>
+          </nav>
+        </div>
+
+        <!-- Center: Iconic H&M Logo -->
+        <div class="flex-shrink-0 flex items-center justify-center">
+          <a href="#" class="inline-block focus:outline-none group" title="H&M Chile">
+            <svg class="h-10 sm:h-11 w-auto transition-transform group-hover:scale-[1.03]" viewBox="0 0 102 54" fill="#E50010" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.74 38.38V15.62H15.62V24.58H25.74V15.62H33.62V38.38H25.74V29.58H15.62V38.38H7.74Z"/>
+              <path d="M49.62 38.86C45.26 38.86 42.02 36.3 42.02 31.86C42.02 28.58 44.1 26.34 47.78 24.9C45.38 23.66 44.02 21.74 44.02 19.46C44.02 16.26 46.86 13.98 50.74 13.98C54.62 13.98 57.18 16.34 57.18 19.78C57.18 22.38 55.46 24.34 52.54 25.46L49.02 26.86C46.82 27.74 45.66 28.98 45.66 30.74C45.66 32.74 47.38 34.1 49.74 34.1C51.98 34.1 53.66 32.9 54.58 30.82L57.54 32.54C56.14 36.14 53.3 38.86 49.62 38.86ZM50.42 22.42C51.94 22.42 53.06 21.34 53.06 19.98C53.06 18.66 52.02 17.74 50.62 17.74C49.18 17.74 48.14 18.7 48.14 19.98C48.14 21.34 49.06 22.42 50.42 22.42Z"/>
+              <path d="M66.42 38.38V15.62H73.22L80.98 29.38L88.74 15.62H95.54V38.38H88.74V24.5L82.14 35.86H79.82L73.22 24.5V38.38H66.42Z"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right: Actions & Tools -->
+        <div class="flex items-center space-x-4 sm:space-x-5 text-hm-dark">
+          <button class="p-1 hover:text-hm-red transition" title="Buscar productos">
+            <i data-lucide="search" class="w-5 h-5 stroke-[1.5]"></i>
+          </button>
+          <a href="#post-venta" class="hidden sm:flex items-center gap-1.5 text-xs font-semibold hover:text-hm-red transition" title="Evaluar CSAT">
+            <i data-lucide="smile" class="w-4 h-4 stroke-[1.8] text-hm-red"></i>
+            <span>Encuesta CSAT</span>
+          </a>
+          <button class="p-1 hover:text-hm-red transition relative" title="Favoritos">
+            <i data-lucide="heart" class="w-5 h-5 stroke-[1.5]"></i>
+            <span class="absolute -top-1 -right-1 bg-hm-red text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+          </button>
+          <button class="p-1 hover:text-hm-red transition relative" title="Bolsa de compra">
+            <i data-lucide="shopping-bag" class="w-5 h-5 stroke-[1.5]"></i>
+            <span class="absolute -top-1 -right-1 bg-hm-dark text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">1</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-hm-border px-6 py-6 space-y-4">
+      <div class="space-y-3 text-sm font-semibold uppercase tracking-wider text-hm-dark border-b border-neutral-100 pb-4">
+        <a href="#objetivo" class="block py-1 hover:text-hm-red">Objetivo & CSAT 1 Año</a>
+        <a href="#post-venta" class="block py-1 hover:text-hm-red">1. Evalúa Servicio Post-Venta</a>
+        <a href="#tallas-catalogo" class="block py-1 hover:text-hm-red">2. Colección Tallas Extendidas</a>
+        <a href="#cambios-presenciales" class="block py-1 hover:text-hm-red">3. Módulo de Cambios Express</a>
+      </div>
+      <div class="text-xs text-hm-muted space-y-2">
+        <p>Atención al cliente: 800 200 466</p>
+        <p>Lunes a Domingo: 09:00 - 21:00 hrs</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-grow">
+
+    <!-- ==================== HERO & OBJETIVO ESTRATÉGICO ==================== -->
+    <section id="objetivo" class="relative bg-hm-softBg border-b border-hm-border overflow-hidden">
+      <!-- Background subtle fashion typography -->
+      <div class="absolute right-0 top-0 bottom-0 pointer-events-none opacity-[0.03] select-none flex items-center">
+        <span class="text-[28vw] font-black leading-none text-neutral-900 tracking-tighter">H&M</span>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
+        
+        <!-- Breadcrumb / Preheader -->
+        <div class="flex items-center space-x-2 text-xs text-hm-muted uppercase tracking-wider mb-4">
+          <span>Iniciativa Estratégica 2026 - 2027</span>
+          <span>/</span>
+          <span class="text-hm-dark font-semibold">Experiencia del Cliente & Excelencia Operativa</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          
+          <!-- Left Column: Strategic Mandate (7 Cols) -->
+          <div class="lg:col-span-7">
+            <span class="inline-block bg-neutral-900 text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 mb-4">
+              Objetivo Corporativo Anual
+            </span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-hm-dark tracking-tight leading-tight">
+              Mejorar la experiencia de compra
+            </h1>
+
+            <!-- Goal Statement exact from wireframe specifications -->
+            <div class="mt-5 p-5 bg-white border-l-4 border-hm-red border-y border-r border-neutral-200/80 shadow-sm">
+              <p class="text-base sm:text-lg text-neutral-800 leading-relaxed font-normal">
+                “Aumentar el índice de satisfacción de los clientes a lo largo de <strong>1 año</strong>, a través de mejoras en la atención, disponibilidad de tallas y variedad, como también agilizar la gestión de cambios y devoluciones.”
+              </p>
+            </div>
+
+            <!-- Key Strategic Pillars in compact badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
+              <div class="bg-white p-3.5 border border-hm-border flex items-center space-x-3">
+                <div class="w-8 h-8 bg-neutral-100 flex items-center justify-center text-hm-dark flex-shrink-0">
+                  <i data-lucide="heart-handshake" class="w-4 h-4 stroke-[1.8]"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-hm-dark uppercase tracking-wide">Atención</h4>
+                  <p class="text-[11px] text-hm-muted">Capacitación continua</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-3.5 border border-hm-border flex items-center space-x-3">
+                <div class="w-8 h-8 bg-neutral-100 flex items-center justify-center text-hm-dark flex-shrink-0">
+                  <i data-lucide="layers" class="w-4 h-4 stroke-[1.8]"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-hm-dark uppercase tracking-wide">Tallas 32 a 54</h4>
+                  <p class="text-[11px] text-hm-muted">+40% disponibilidad</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-3.5 border border-hm-border flex items-center space-x-3">
+                <div class="w-8 h-8 bg-neutral-100 flex items-center justify-center text-hm-dark flex-shrink-0">
+                  <i data-lucide="zap" class="w-4 h-4 stroke-[1.8]"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-hm-dark uppercase tracking-wide">Cambios Rápidos</h4>
+                  <p class="text-[11px] text-hm-muted">Menos de 2 minutos</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#post-venta" class="bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-widest px-7 py-4 transition flex items-center gap-2">
+                <span>Evaluar Servicio Post-Venta</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#tallas-catalogo" class="bg-transparent hover:bg-neutral-200/60 text-hm-dark border border-neutral-400 text-xs font-bold uppercase tracking-widest px-6 py-4 transition">
+                Ver Nueva Colección
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: CSAT Real-Time Interactive Dashboard (5 Cols) -->
+          <div class="lg:col-span-5">
+            <div class="bg-white p-6 sm:p-8 border border-hm-border shadow-sm">
+              <div class="flex items-center justify-between border-b border-hm-border pb-4 mb-5">
+                <div>
+                  <span class="text-[10px] font-bold text-hm-muted uppercase tracking-wider block">Indicador Primario (CSAT)</span>
+                  <h3 class="text-sm font-bold text-hm-dark uppercase tracking-wide">Puntuación de Satisfacción</h3>
+                </div>
+                <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-extrabold px-2.5 py-1 tracking-wider uppercase flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                  En Vivo
+                </span>
+              </div>
+
+              <!-- Main Score Display -->
+              <div class="flex items-baseline justify-between mb-4">
+                <div>
+                  <div class="flex items-baseline space-x-2">
+                    <span id="kpiBigScore" class="text-5xl font-black text-hm-dark tracking-tight">4.71</span>
+                    <span class="text-lg font-medium text-hm-muted">/ 5.0</span>
+                  </div>
+                  <p class="text-xs text-hm-muted mt-1">Escala de 1.0 a 5.0 estrellas</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-hm-muted">Meta a 1 Año:</span>
+                  <p class="text-sm font-bold text-hm-red">≥ 95% (4.75)</p>
+                  <span id="csatPercentText" class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 mt-1 inline-block">
+                    94.2% actual
+                  </span>
+                </div>
+              </div>
+
+              <!-- Progress bar against annual goal -->
+              <div class="space-y-1.5 mb-6">
+                <div class="flex justify-between text-[11px] font-medium text-hm-muted">
+                  <span>Progreso anual hacia la meta</span>
+                  <span id="progressSummary" class="text-hm-dark font-semibold">94.2% / 95.0%</span>
+                </div>
+                <div class="w-full h-2.5 bg-neutral-100 overflow-hidden">
+                  <div id="csatProgressBar" class="h-full bg-neutral-900 transition-all duration-700" style="width: 94.2%;"></div>
+                </div>
+              </div>
+
+              <!-- 3 Pillars Breakdown -->
+              <div class="space-y-3 pt-4 border-t border-hm-border">
+                
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span class="text-neutral-700 font-medium">1. Atención y Amabilidad de Personal</span>
+                    <span id="pillarAtencionScore" class="font-bold text-hm-dark">4.8 / 5.0</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-neutral-100">
+                    <div id="barAtencion" class="h-full bg-hm-red transition-all duration-500" style="width: 96%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span class="text-neutral-700 font-medium">2. Disponibilidad de Tallas y Variedad</span>
+                    <span id="pillarTallasScore" class="font-bold text-hm-dark">4.6 / 5.0</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-neutral-100">
+                    <div id="barTallas" class="h-full bg-neutral-900 transition-all duration-500" style="width: 92%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs mb-1">
+                    <span class="text-neutral-700 font-medium">3. Agilidad en Cambios y Devoluciones</span>
+                    <span id="pillarCambiosScore" class="font-bold text-hm-dark">4.7 / 5.0</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-neutral-100">
+                    <div id="barCambios" class="h-full bg-neutral-900 transition-all duration-500" style="width: 94%;"></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between text-[11px] text-hm-muted">
+                <span>Evaluaciones computadas: <strong id="totalReviewsCount" class="text-hm-dark font-bold">18.420</strong></span>
+                <span class="text-neutral-400">Actualizado hace instantes</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 1: EVALÚA NUESTROS SERVICIOS DE POST-VENTA ==================== -->
+    <section id="post-venta" class="py-16 sm:py-20 bg-white border-b border-hm-border scroll-mt-14">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-hm-red block mb-1">Wireframe · Sección 1</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-hm-dark">
+            Evalúa nuestros servicios de Post-Venta
+          </h2>
+          <p class="text-sm text-hm-muted mt-2 max-w-lg mx-auto">
+            Tu opinión directa alimenta el indicador CSAT en tiempo real. Cuéntanos cómo fue tu experiencia de atención, tallas o gestión de cambio.
+          </p>
+        </div>
+
+        <!-- Feedback Form Container -->
+        <div class="bg-hm-softBg border border-hm-border p-6 sm:p-10 shadow-sm relative">
+          
+          <!-- Success Notification (Hidden initially) -->
+          <div id="feedbackSuccess" class="hidden mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 transition-all">
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-700 mt-0.5 flex-shrink-0"></i>
+              <div>
+                <h4 class="text-sm font-bold">¡Gracias por tu evaluación!</h4>
+                <p class="text-xs text-emerald-800 mt-0.5">Tu puntuación ha sido incorporada al índice de satisfacción general anual (CSAT) en el panel superior.</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="csatForm" onsubmit="submitCsatEvaluation(event)" class="space-y-6">
+            
+            <!-- Channel / Experience Type -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-hm-dark mb-2">Canal evaluado *</label>
+                <select id="channelSelect" required class="w-full bg-white border border-hm-border rounded-none px-4 py-3 text-xs sm:text-sm text-hm-dark focus:outline-none focus:border-neutral-900 transition">
+                  <option value="">Selecciona el canal de compra...</option>
+                  <option value="tienda">Tienda Física H&M Chile</option>
+                  <option value="online">H&M Web / App Móvil (cl.hm.com)</option>
+                  <option value="cambio">Módulo de Cambios y Devoluciones</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-hm-dark mb-2">Tienda de compra (Opcional)</label>
+                <select id="storeSelected" class="w-full bg-white border border-hm-border rounded-none px-4 py-3 text-xs sm:text-sm text-hm-dark focus:outline-none focus:border-neutral-900 transition">
+                  <option value="">Cualquier sucursal / Online</option>
+                  <option value="costanera">H&M Costanera Center (Providencia)</option>
+                  <option value="parquearauco">H&M Parque Arauco (Las Condes)</option>
+                  <option value="altolascondes">H&M Alto Las Condes</option>
+                  <option value="vespucio">H&M Mallplaza Vespucio</option>
+                  <option value="marinaarauco">H&M Marina Arauco (Viña del Mar)</option>
+                  <option value="trebol">H&M Mallplaza Trébol (Concepción)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Primary Metric: Star Rating Scale 1 to 5 -->
+            <div class="bg-white p-6 border border-hm-border">
+              <label class="block text-xs font-bold uppercase tracking-wider text-hm-dark mb-1">
+                Puntuación de satisfacción del cliente (Escala 1 a 5) *
+              </label>
+              <p class="text-xs text-hm-muted mb-4">Haz clic sobre las estrellas según tu nivel de satisfacción general:</p>
+              
+              <div class="flex items-center space-x-2" id="starSelectorContainer">
+                <button type="button" class="star-btn p-1 text-neutral-300 hover:text-amber-400 focus:outline-none" onclick="handleStarClick(1)" aria-label="1 estrella">
+                  <i data-lucide="star" class="star-rate-icon w-8 h-8 fill-current"></i>
+                </button>
+                <button type="button" class="star-btn p-1 text-neutral-300 hover:text-amber-400 focus:outline-none" onclick="handleStarClick(2)" aria-label="2 estrellas">
+                  <i data-lucide="star" class="star-rate-icon w-8 h-8 fill-current"></i>
+                </button>
+                <button type="button" class="star-btn p-1 text-neutral-300 hover:text-amber-400 focus:outline-none" onclick="handleStarClick(3)" aria-label="3 estrellas">
+                  <i data-lucide="star" class="star-rate-icon w-8 h-8 fill-current"></i>
+                </button>
+                <button type="button" class="star-btn p-1 text-neutral-300 hover:text-amber-400 focus:outline-none" onclick="handleStarClick(4)" aria-label="4 estrellas">
+                  <i data-lucide="star" class="star-rate-icon w-8 h-8 fill-current"></i>
+                </button>
+                <button type="button" class="star-btn p-1 text-neutral-300 hover:text-amber-400 focus:outline-none" onclick="handleStarClick(5)" aria-label="5 estrellas">
+                  <i data-lucide="star" class="star-rate-icon w-8 h-8 fill-current"></i>
+                </button>
+                <span id="starCaption" class="ml-3 text-xs font-semibold text-hm-dark tracking-wide">
+                  Selecciona una valoración
+                </span>
+              </div>
+              <input type="hidden" id="chosenRatingValue" value="0">
+            </div>
+
+            <!-- Specific Criteria Breakdown (Checkboxes / Radio) -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-hm-dark mb-2">Aspectos sobresalientes de tu experiencia</label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <label class="flex items-center space-x-2.5 p-3.5 bg-white border border-hm-border cursor-pointer hover:border-neutral-900 transition">
+                  <input type="checkbox" name="csatArea" value="atencion" class="accent-hm-red w-4 h-4 rounded-none">
+                  <span class="font-medium text-neutral-800">Atención rápida y amable</span>
+                </label>
+                <label class="flex items-center space-x-2.5 p-3.5 bg-white border border-hm-border cursor-pointer hover:border-neutral-900 transition">
+                  <input type="checkbox" name="csatArea" value="tallas" class="accent-hm-red w-4 h-4 rounded-none">
+                  <span class="font-medium text-neutral-800">Encontré mi talla y variedad</span>
+                </label>
+                <label class="flex items-center space-x-2.5 p-3.5 bg-white border border-hm-border cursor-pointer hover:border-neutral-900 transition">
+                  <input type="checkbox" name="csatArea" value="cambios" class="accent-hm-red w-4 h-4 rounded-none">
+                  <span class="font-medium text-neutral-800">Gestión de cambio sin demoras</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Free Text Comments -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-hm-dark mb-2">Comentarios o sugerencias para nuestro equipo</label>
+              <textarea id="csatComments" rows="3" placeholder="¿Cómo podemos hacer que tu próxima visita o compra sea aún mejor?" class="w-full bg-white border border-hm-border rounded-none px-4 py-3 text-xs sm:text-sm text-hm-dark focus:outline-none focus:border-neutral-900 transition"></textarea>
+            </div>
+
+            <!-- Submit Button Row -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+              <span class="text-[11px] text-hm-muted">
+                Tus datos son tratados bajo la política de privacidad de H&M Hennes & Mauritz.
+              </span>
+              <button type="submit" class="w-full sm:w-auto bg-hm-dark hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition flex items-center justify-center gap-2">
+                <span>Registrar Valoración CSAT</span>
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 2: CONOCE NUESTROS NUEVOS PRODUCTOS CON MAYOR DISPONIBILIDAD DE TALLAS Y VARIEDADES ==================== -->
+    <section id="tallas-catalogo" class="py-16 sm:py-20 bg-hm-softBg border-b border-hm-border scroll-mt-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-hm-red block mb-1">Wireframe · Sección 2</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-hm-dark">
+              Nuevos productos con mayor disponibilidad de tallas y variedad
+            </h2>
+            <p class="text-xs sm:text-sm text-hm-muted mt-2 max-w-2xl leading-relaxed">
+              Expandimos permanentemente nuestro rango de tallas desde la <strong>32 hasta la 54 (XS a 4XL)</strong>. Diseños pensados para ajustarse a todos los cuerpos, sin diferencia de precio ni restricciones de disponibilidad.
+            </p>
+          </div>
+
+          <!-- Measurement Guide Modal Trigger -->
+          <button onclick="toggleModal('measureGuideModal')" class="inline-flex items-center gap-2 bg-white border border-neutral-300 hover:border-neutral-900 text-hm-dark text-xs font-bold uppercase tracking-wider px-4 py-2.5 transition whitespace-nowrap">
+            <i data-lucide="ruler" class="w-4 h-4 text-hm-red"></i>
+            <span>Guía de Calce y Medidas</span>
+          </button>
+        </div>
+
+        <!-- Interactive Size Filter Pills -->
+        <div class="bg-white p-4 border border-hm-border mb-8 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="text-xs font-bold text-hm-muted uppercase tracking-wider mr-2">Filtrar Talla:</span>
+            <button onclick="filterCatalog('TODAS')" class="filter-size-btn bg-neutral-900 text-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="TODAS">Todas</button>
+            <button onclick="filterCatalog('XS')" class="filter-size-btn bg-transparent text-neutral-700 hover:bg-neutral-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="XS">XS (32-34)</button>
+            <button onclick="filterCatalog('S')" class="filter-size-btn bg-transparent text-neutral-700 hover:bg-neutral-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="S">S (36)</button>
+            <button onclick="filterCatalog('M')" class="filter-size-btn bg-transparent text-neutral-700 hover:bg-neutral-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="M">M (38-40)</button>
+            <button onclick="filterCatalog('L')" class="filter-size-btn bg-transparent text-neutral-700 hover:bg-neutral-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="L">L (42-44)</button>
+            <button onclick="filterCatalog('XL')" class="filter-size-btn bg-transparent text-neutral-700 hover:bg-neutral-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="XL">XL (46)</button>
+            <button onclick="filterCatalog('2XL')" class="filter-size-btn bg-transparent text-neutral-700 hover:bg-neutral-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="2XL">2XL (48-50)</button>
+            <button onclick="filterCatalog('3XL')" class="filter-size-btn bg-transparent text-neutral-700 hover:bg-neutral-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition" data-filter="3XL">3XL (52-54)</button>
+          </div>
+
+          <div class="text-xs text-hm-muted">
+            Mostrando: <strong id="visibleProductsCount" class="text-hm-dark font-bold">4 de 4</strong> modelos con stock inmediato
+          </div>
+        </div>
+
+        <!-- Product Lookbook Grid (Realistic H&M E-commerce style) -->
+        <div id="productsCatalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Product Card 1 -->
+          <article class="product-card group bg-white border border-hm-border flex flex-col justify-between" data-sizes="TODAS,XS,S,M,L,XL,2XL,3XL">
+            <div>
+              <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80" alt="Pantalón Wide Leg Sastre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x1060/f4f4f4/222222?text=HM+Wide+Leg'">
+                <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                  <span class="tag-badge bg-white text-hm-dark px-2 py-0.5 border border-hm-border">Tallas 32 a 54</span>
+                  <span class="tag-badge bg-hm-red text-white px-2 py-0.5">Nueva Colección</span>
+                </div>
+                <button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 text-neutral-700 flex items-center justify-center hover:text-hm-red transition shadow-sm" aria-label="Guardar en favoritos">
+                  <i data-lucide="heart" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4">
+                <!-- Color Swatches -->
+                <div class="flex items-center gap-1.5 mb-2.5">
+                  <span class="w-3.5 h-3.5 rounded-full bg-black border border-white ring-1 ring-neutral-300"></span>
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#E5DCC5] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#3B444B] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="text-[10px] text-hm-muted ml-1">+3 tonos</span>
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-semibold text-hm-dark group-hover:underline">Pantalón Wide Leg de Sastre</h3>
+                <p class="text-[11px] text-hm-muted mt-0.5">Tiro alto con pinzas y cintura elástica trasera</p>
+                
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-sm font-black text-hm-dark">$29.990</span>
+                  <span class="text-[10px] font-bold uppercase text-emerald-800 bg-emerald-50 px-2 py-0.5">En Stock</span>
+                </div>
+
+                <!-- Size selector pills on card -->
+                <div class="mt-3 pt-3 border-t border-neutral-100">
+                  <span class="text-[10px] text-neutral-500 font-semibold uppercase block mb-1.5">Tallas disponibles:</span>
+                  <div class="flex flex-wrap gap-1">
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">XS</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">S</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">M</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">L</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">XL</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-900 text-white">2XL</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-900 text-white">3XL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 pt-0">
+              <button onclick="addToBagNotice('Pantalón Wide Leg')" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white text-[11px] font-bold uppercase tracking-wider py-2.5 transition">
+                Añadir a la Bolsa
+              </button>
+            </div>
+          </article>
+
+          <!-- Product Card 2 -->
+          <article class="product-card group bg-white border border-hm-border flex flex-col justify-between" data-sizes="TODAS,S,M,L,XL,2XL,3XL">
+            <div>
+              <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Camisa Oversize Mezcla Lino" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x1060/f4f4f4/222222?text=HM+Camisa+Lino'">
+                <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                  <span class="tag-badge bg-white text-hm-dark px-2 py-0.5 border border-hm-border">Corte Relaxed</span>
+                  <span class="tag-badge bg-neutral-900 text-white px-2 py-0.5">Mezcla Lino</span>
+                </div>
+                <button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 text-neutral-700 flex items-center justify-center hover:text-hm-red transition shadow-sm" aria-label="Guardar en favoritos">
+                  <i data-lucide="heart" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4">
+                <div class="flex items-center gap-1.5 mb-2.5">
+                  <span class="w-3.5 h-3.5 rounded-full bg-white border border-neutral-400"></span>
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#305C72] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#8E7970] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="text-[10px] text-hm-muted ml-1">+4 tonos</span>
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-semibold text-hm-dark group-hover:underline">Camisa Oversize Mezcla Lino</h3>
+                <p class="text-[11px] text-hm-muted mt-0.5">Caída fresca y cuello camisero clásico</p>
+                
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-sm font-black text-hm-dark">$24.990</span>
+                  <span class="text-[10px] font-bold uppercase text-emerald-800 bg-emerald-50 px-2 py-0.5">En Stock</span>
+                </div>
+
+                <div class="mt-3 pt-3 border-t border-neutral-100">
+                  <span class="text-[10px] text-neutral-500 font-semibold uppercase block mb-1.5">Tallas disponibles:</span>
+                  <div class="flex flex-wrap gap-1">
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">S</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">M</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">L</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">XL</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-900 text-white">2XL</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-900 text-white">3XL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 pt-0">
+              <button onclick="addToBagNotice('Camisa Mezcla Lino')" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white text-[11px] font-bold uppercase tracking-wider py-2.5 transition">
+                Añadir a la Bolsa
+              </button>
+            </div>
+          </article>
+
+          <!-- Product Card 3 -->
+          <article class="product-card group bg-white border border-hm-border flex flex-col justify-between" data-sizes="TODAS,XS,S,M,L">
+            <div>
+              <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Blazer Recto Sastrería" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x1060/f4f4f4/222222?text=HM+Blazer+Recto'">
+                <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                  <span class="tag-badge bg-white text-hm-dark px-2 py-0.5 border border-hm-border">Edición Limitada</span>
+                </div>
+                <button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 text-neutral-700 flex items-center justify-center hover:text-hm-red transition shadow-sm" aria-label="Guardar en favoritos">
+                  <i data-lucide="heart" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4">
+                <div class="flex items-center gap-1.5 mb-2.5">
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#1C1C1C] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#C2B280] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="text-[10px] text-hm-muted ml-1">2 tonos</span>
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-semibold text-hm-dark group-hover:underline">Blazer Recto de Botonadura Simple</h3>
+                <p class="text-[11px] text-hm-muted mt-0.5">Solapa en punta y forro satinado suave</p>
+                
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-sm font-black text-hm-dark">$49.990</span>
+                  <span class="text-[10px] font-bold uppercase text-emerald-800 bg-emerald-50 px-2 py-0.5">En Stock</span>
+                </div>
+
+                <div class="mt-3 pt-3 border-t border-neutral-100">
+                  <span class="text-[10px] text-neutral-500 font-semibold uppercase block mb-1.5">Tallas disponibles:</span>
+                  <div class="flex flex-wrap gap-1">
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">XS</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">S</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">M</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">L</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 pt-0">
+              <button onclick="addToBagNotice('Blazer Recto')" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white text-[11px] font-bold uppercase tracking-wider py-2.5 transition">
+                Añadir a la Bolsa
+              </button>
+            </div>
+          </article>
+
+          <!-- Product Card 4 -->
+          <article class="product-card group bg-white border border-hm-border flex flex-col justify-between" data-sizes="TODAS,XS,S,M,L,XL,2XL,3XL">
+            <div>
+              <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Vestido Punto Canalé" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x1060/f4f4f4/222222?text=HM+Vestido+Canale'">
+                <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                  <span class="tag-badge bg-white text-hm-dark px-2 py-0.5 border border-hm-border">Tejido Stretch Inclusivo</span>
+                  <span class="tag-badge bg-hm-red text-white px-2 py-0.5">Top Ventas</span>
+                </div>
+                <button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 text-neutral-700 flex items-center justify-center hover:text-hm-red transition shadow-sm" aria-label="Guardar en favoritos">
+                  <i data-lucide="heart" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4">
+                <div class="flex items-center gap-1.5 mb-2.5">
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#593e36] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="w-3.5 h-3.5 rounded-full bg-neutral-900 border border-white ring-1 ring-neutral-300"></span>
+                  <span class="w-3.5 h-3.5 rounded-full bg-[#9E9084] border border-white ring-1 ring-neutral-300"></span>
+                  <span class="text-[10px] text-hm-muted ml-1">+3 tonos</span>
+                </div>
+
+                <h3 class="text-xs sm:text-sm font-semibold text-hm-dark group-hover:underline">Vestido Midi en Punto Canalé</h3>
+                <p class="text-[11px] text-hm-muted mt-0.5">Silueta fluida con elastano adaptable</p>
+                
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-sm font-black text-hm-dark">$22.990</span>
+                  <span class="text-[10px] font-bold uppercase text-emerald-800 bg-emerald-50 px-2 py-0.5">En Stock</span>
+                </div>
+
+                <div class="mt-3 pt-3 border-t border-neutral-100">
+                  <span class="text-[10px] text-neutral-500 font-semibold uppercase block mb-1.5">Tallas disponibles:</span>
+                  <div class="flex flex-wrap gap-1">
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">XS</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">S</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">M</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">L</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-100 text-neutral-800">XL</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-900 text-white">2XL</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.5 bg-neutral-900 text-white">3XL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 pt-0">
+              <button onclick="addToBagNotice('Vestido Midi en Punto Canalé')" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white text-[11px] font-bold uppercase tracking-wider py-2.5 transition">
+                Añadir a la Bolsa
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Banner: Igualdad de Precio & Política Inclusiva -->
+        <div class="mt-12 bg-white border border-hm-border p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-neutral-100 flex items-center justify-center text-hm-dark flex-shrink-0">
+              <i data-lucide="check" class="w-6 h-6 text-hm-red stroke-[2.5]"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold uppercase tracking-wide text-hm-dark">Compromiso de Precio Único H&M</h4>
+              <p class="text-xs text-hm-muted mt-0.5 max-w-xl">
+                La prenda cuesta exactamente lo mismo desde la talla 32 hasta la 54. Sin recargos por talla ni diferencias entre canal online y tienda física.
+              </p>
+            </div>
+          </div>
+          <a href="#cambios-presenciales" class="text-xs font-bold uppercase tracking-widest text-hm-dark underline underline-offset-4 hover:text-hm-red transition whitespace-nowrap">
+            Conoce cómo cambiar de talla sin costo &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 3: CONOCE NUESTRO NUEVO SISTEMA DE CAMBIOS Y DEVOLUCIÓN PRESENCIAL ==================== -->
+    <section id="cambios-presenciales" class="py-16 sm:py-20 bg-white scroll-mt-14">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-hm-red block mb-1">Wireframe · Sección 3</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-hm-dark">
+            Nuevo sistema de cambios y devolución vía presencial
+          </h2>
+          <p class="text-xs sm:text-sm text-hm-muted mt-2">
+            Eliminamos las filas convencionales. Con nuestro nuevo servicio de <strong>Caja Express de Devolución</strong> en tiendas físicas de todo Chile, realizas tu cambio o reembolso en menos de 2 minutos.
+          </p>
+        </div>
+
+        <!-- 3-Step Clean Guide -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          
+          <div class="bg-hm-softBg p-6 sm:p-8 border border-hm-border flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-black text-hm-red tracking-widest block mb-2">PASO 01</span>
+              <h3 class="text-base font-bold text-hm-dark">Genera tu Pase Digital</h3>
+              <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+                Ingresa tu número de boleta física o pedido online en tu móvil. El sistema generará al instante un código QR que reserva tu atención rápida.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-neutral-200 flex items-center text-xs font-semibold text-neutral-800 gap-2">
+              <i data-lucide="smartphone" class="w-4 h-4 text-hm-red"></i> Desde cualquier teléfono
+            </div>
+          </div>
+
+          <div class="bg-hm-softBg p-6 sm:p-8 border border-hm-border flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-black text-hm-red tracking-widest block mb-2">PASO 02</span>
+              <h3 class="text-base font-bold text-hm-dark">Acude al Tótem Express</h3>
+              <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+                Dirígete directamente al mesón prioritario de cambios en tu sucursal favorita sin pasar por la fila general de compras.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-neutral-200 flex items-center text-xs font-semibold text-neutral-800 gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-hm-red"></i> Menos de 2 minutos
+            </div>
+          </div>
+
+          <div class="bg-hm-softBg p-6 sm:p-8 border border-hm-border flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-black text-hm-red tracking-widest block mb-2">PASO 03</span>
+              <h3 class="text-base font-bold text-hm-dark">Cambio o Reembolso Inmediato</h3>
+              <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+                Elige tu nueva talla en los percheros con asistencia preferente, abona a tu cuenta H&M Member o recibe la reversa en tu medio de pago.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-neutral-200 flex items-center text-xs font-semibold text-neutral-800 gap-2">
+              <i data-lucide="check-check" class="w-4 h-4 text-hm-red"></i> 100% garantizado
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Store Locator & QR Generator (2 columns) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Store Finder (7 cols) -->
+          <div class="lg:col-span-7 bg-hm-softBg p-6 sm:p-8 border border-hm-border">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-hm-dark">Sucursales con Módulo Express</h3>
+                <p class="text-xs text-hm-muted">Consulta la disponibilidad y tiempos de espera en tienda</p>
+              </div>
+              <i data-lucide="map-pin" class="w-5 h-5 text-hm-red"></i>
+            </div>
+
+            <div class="relative mb-4">
+              <input type="text" id="storeFilterInput" onkeyup="filterStoreList()" placeholder="Buscar por centro comercial o comuna..." class="w-full bg-white border border-hm-border rounded-none px-4 py-3 pl-10 text-xs sm:text-sm text-hm-dark focus:outline-none focus:border-neutral-900">
+              <i data-lucide="search" class="w-4 h-4 text-neutral-400 absolute left-3.5 top-3.5"></i>
+            </div>
+
+            <!-- Stores List with Live Status -->
+            <div class="space-y-2.5 max-h-80 overflow-y-auto pr-1 custom-scroll" id="storesContainer">
+              
+              <div class="store-item p-4 bg-white border border-hm-border flex items-center justify-between">
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-hm-dark">H&M Costanera Center</h4>
+                  <p class="text-[11px] text-hm-muted">Nivel 1 y 2, Providencia · Santiago</p>
+                  <span class="inline-block mt-1 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5">Tótem Express Activo</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-bold text-hm-dark">Espera &lt; 2 min</span>
+                  <p class="text-[10px] text-neutral-500">10:00 - 20:30 hrs</p>
+                </div>
+              </div>
+
+              <div class="store-item p-4 bg-white border border-hm-border flex items-center justify-between">
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-hm-dark">H&M Parque Arauco</h4>
+                  <p class="text-[11px] text-hm-muted">Distrito de Lujo / Moda, Las Condes · Santiago</p>
+                  <span class="inline-block mt-1 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5">Tótem Express Activo</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-bold text-hm-dark">Espera &lt; 3 min</span>
+                  <p class="text-[10px] text-neutral-500">10:00 - 20:30 hrs</p>
+                </div>
+              </div>
+
+              <div class="store-item p-4 bg-white border border-hm-border flex items-center justify-between">
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-hm-dark">H&M Mallplaza Vespucio</h4>
+                  <p class="text-[11px] text-hm-muted">Av. Vicuña Mackenna 7110, La Florida · Santiago</p>
+                  <span class="inline-block mt-1 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5">Tótem Express Activo</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-bold text-hm-dark">Espera &lt; 1 min</span>
+                  <p class="text-[10px] text-neutral-500">10:00 - 20:00 hrs</p>
+                </div>
+              </div>
+
+              <div class="store-item p-4 bg-white border border-hm-border flex items-center justify-between">
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-hm-dark">H&M Marina Arauco</h4>
+                  <p class="text-[11px] text-hm-muted">Av. Libertad 1348, Viña del Mar · Región de Valparaíso</p>
+                  <span class="inline-block mt-1 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5">Tótem Express Activo</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-bold text-hm-dark">Espera &lt; 2 min</span>
+                  <p class="text-[10px] text-neutral-500">10:00 - 20:00 hrs</p>
+                </div>
+              </div>
+
+              <div class="store-item p-4 bg-white border border-hm-border flex items-center justify-between">
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-hm-dark">H&M Mallplaza Trébol</h4>
+                  <p class="text-[11px] text-hm-muted">Av. Pdte. Jorge Alessandri 3177, Talcahuano · Concepción</p>
+                  <span class="inline-block mt-1 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5">Tótem Express Activo</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-bold text-hm-dark">Espera &lt; 2 min</span>
+                  <p class="text-[10px] text-neutral-500">10:00 - 20:00 hrs</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Simulator: Generar QR de Prueba para Cambio (5 cols) -->
+          <div class="lg:col-span-5 bg-white p-6 sm:p-8 border border-hm-border flex flex-col justify-between">
+            <div>
+              <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-hm-dark mb-2">
+                <i data-lucide="qr-code" class="w-4 h-4 text-hm-red"></i>
+                <span>Simulador de Pase Digital</span>
+              </div>
+              <h3 class="text-base font-bold text-hm-dark">Genera tu QR Exprés en 1 clic</h3>
+              <p class="text-xs text-hm-muted mt-1 leading-relaxed">
+                Prueba cómo funciona el pase para presentarlo directo en la sucursal de tu elección:
+              </p>
+
+              <div class="mt-4 space-y-3">
+                <div>
+                  <label class="block text-[11px] font-semibold text-neutral-700 uppercase mb-1">N° de Boleta o Boleta Electrónica</label>
+                  <input type="text" id="demoBoletaInput" placeholder="Ej. HM-CL-98421" value="HM-CL-782104" class="w-full bg-hm-softBg border border-hm-border rounded-none px-3.5 py-2.5 text-xs text-hm-dark focus:outline-none focus:border-neutral-900">
+                </div>
+
+                <div>
+                  <label class="block text-[11px] font-semibold text-neutral-700 uppercase mb-1">Motivo de cambio o devolución</label>
+                  <select id="demoReasonInput" class="w-full bg-hm-softBg border border-hm-border rounded-none px-3.5 py-2.5 text-xs text-hm-dark focus:outline-none focus:border-neutral-900">
+                    <option value="talla">Cambio de talla por otra medida</option>
+                    <option value="color">Cambio de color / modelo</option>
+                    <option value="reembolso">Devolución y reembolso de dinero</option>
+                  </select>
+                </div>
+
+                <button type="button" onclick="generateSimulatedQr()" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-wider py-3 transition">
+                  Generar Pase Digital QR
+                </button>
+              </div>
+
+              <!-- QR Code Result Display Box -->
+              <div id="qrResultBox" class="mt-4 p-4 bg-hm-softBg border border-dashed border-neutral-300 text-center">
+                <div class="inline-block p-2 bg-white border border-neutral-200">
+                  <!-- Vector stylized barcode / QR simulation -->
+                  <svg class="w-24 h-24 mx-auto" viewBox="0 0 100 100" fill="#222">
+                    <rect x="0" y="0" width="30" height="30"/>
+                    <rect x="5" y="5" width="20" height="20" fill="white"/>
+                    <rect x="10" y="10" width="10" height="10"/>
+                    
+                    <rect x="70" y="0" width="30" height="30"/>
+                    <rect x="75" y="5" width="20" height="20" fill="white"/>
+                    <rect x="80" y="10" width="10" height="10"/>
+
+                    <rect x="0" y="70" width="30" height="30"/>
+                    <rect x="5" y="75" width="20" height="20" fill="white"/>
+                    <rect x="10" y="80" width="10" height="10"/>
+
+                    <rect x="36" y="8" width="6" height="24"/>
+                    <rect x="48" y="14" width="14" height="6"/>
+                    <rect x="36" y="40" width="28" height="20"/>
+                    <rect x="70" y="44" width="8" height="22"/>
+                    <rect x="82" y="70" width="14" height="20"/>
+                    <rect x="42" y="72" width="20" height="8"/>
+                  </svg>
+                </div>
+                <p id="qrCodeText" class="text-xs font-mono font-bold text-hm-dark mt-2 tracking-widest">PASE-EXPRESS-782104</p>
+                <span class="text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 font-bold uppercase mt-1 inline-block">Listo para escaneo en caja</span>
+              </div>
+            </div>
+
+            <p class="text-[11px] text-hm-muted mt-4">
+              * Tienes 30 días continuos con etiquetas originales y sin signos de uso.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODAL: GUÍA DE CALCE Y MEDIDAS INCLUSIVAS ==================== -->
+  <div id="measureGuideModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white max-w-2xl w-full p-6 sm:p-8 border border-hm-border shadow-2xl relative">
+      <button onclick="toggleModal('measureGuideModal')" class="absolute top-4 right-4 text-neutral-400 hover:text-hm-dark" aria-label="Cerrar modal">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <span class="text-[10px] font-bold text-hm-red uppercase tracking-widest">H&M Fitting Guide</span>
+      <h3 class="text-xl font-bold uppercase tracking-tight text-hm-dark mt-1">Guía de Medidas Inclusivas 32 a 54</h3>
+      <p class="text-xs text-hm-muted mt-1 mb-6">
+        Diseñado para asegurar que encuentres tu ajuste ideal en todas las prendas de la colección.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-neutral-900 bg-neutral-100 font-bold uppercase tracking-wider text-hm-dark">
+              <th class="p-2.5">Talla H&M</th>
+              <th class="p-2.5">Equiv. Numérica</th>
+              <th class="p-2.5">Pecho (cm)</th>
+              <th class="p-2.5">Cintura (cm)</th>
+              <th class="p-2.5">Cadera (cm)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-neutral-200">
+            <tr>
+              <td class="p-2.5 font-bold">XS</td>
+              <td class="p-2.5">32 - 34</td>
+              <td class="p-2.5">76 - 82</td>
+              <td class="p-2.5">60 - 66</td>
+              <td class="p-2.5">84 - 90</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">S</td>
+              <td class="p-2.5">36</td>
+              <td class="p-2.5">84 - 88</td>
+              <td class="p-2.5">68 - 72</td>
+              <td class="p-2.5">92 - 96</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">M</td>
+              <td class="p-2.5">38 - 40</td>
+              <td class="p-2.5">90 - 96</td>
+              <td class="p-2.5">74 - 80</td>
+              <td class="p-2.5">98 - 104</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">L</td>
+              <td class="p-2.5">42 - 44</td>
+              <td class="p-2.5">98 - 104</td>
+              <td class="p-2.5">82 - 88</td>
+              <td class="p-2.5">106 - 112</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-bold">XL</td>
+              <td class="p-2.5">46</td>
+              <td class="p-2.5">106 - 112</td>
+              <td class="p-2.5">90 - 96</td>
+              <td class="p-2.5">114 - 120</td>
+            </tr>
+            <tr class="bg-red-50/40">
+              <td class="p-2.5 font-bold text-hm-red">2XL / Curve</td>
+              <td class="p-2.5 font-medium">48 - 50</td>
+              <td class="p-2.5">114 - 122</td>
+              <td class="p-2.5">98 - 106</td>
+              <td class="p-2.5">122 - 130</td>
+            </tr>
+            <tr class="bg-red-50/40">
+              <td class="p-2.5 font-bold text-hm-red">3XL / Curve</td>
+              <td class="p-2.5 font-medium">52 - 54</td>
+              <td class="p-2.5">124 - 134</td>
+              <td class="p-2.5">108 - 118</td>
+              <td class="p-2.5">132 - 142</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="toggleModal('measureGuideModal')" class="bg-neutral-900 text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5">
+          Entendido
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-neutral-900 text-white px-5 py-3.5 shadow-xl text-xs font-medium border-l-4 border-hm-red transition-all">
+    <div class="flex items-center space-x-3">
+      <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+      <span id="toastMessage">Prenda agregada a tu bolsa</span>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER OFICIAL ESTILO H&M ==================== -->
+  <footer class="bg-hm-softBg border-t border-hm-border pt-14 pb-10 text-xs text-hm-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Footer Columns -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-hm-border">
+        
+        <div>
+          <h4 class="font-bold uppercase tracking-wider text-xs mb-3.5 text-hm-dark">Comprar</h4>
+          <ul class="space-y-2 text-neutral-600">
+            <li><a href="#mujer" class="hover:underline">Mujer</a></li>
+            <li><a href="#hombre" class="hover:underline">Hombre</a></li>
+            <li><a href="#divided" class="hover:underline">Divided</a></li>
+            <li><a href="#tallas-catalogo" class="hover:underline">Tallas Inclusivas 32-54</a></li>
+            <li><a href="#" class="hover:underline">H&M HOME</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold uppercase tracking-wider text-xs mb-3.5 text-hm-dark">Información Corporativa</h4>
+          <ul class="space-y-2 text-neutral-600">
+            <li><a href="#objetivo" class="hover:underline">Estrategia CSAT 2026-2027</a></li>
+            <li><a href="#" class="hover:underline">Trabajar en H&M Chile</a></li>
+            <li><a href="#" class="hover:underline">Sostenibilidad H&M Group</a></li>
+            <li><a href="#" class="hover:underline">Prensa & Noticias</a></li>
+            <li><a href="#" class="hover:underline">Relación con Inversionistas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold uppercase tracking-wider text-xs mb-3.5 text-hm-dark">Ayuda & Servicio</h4>
+          <ul class="space-y-2 text-neutral-600">
+            <li><a href="#post-venta" class="hover:underline">Servicio al Cliente & CSAT</a></li>
+            <li><a href="#cambios-presenciales" class="hover:underline">Cambios & Devoluciones</a></li>
+            <li><a href="#cambios-presenciales" class="hover:underline">Buscar Tiendas H&M</a></li>
+            <li><a href="#" class="hover:underline">Términos y Condiciones</a></li>
+            <li><a href="#" class="hover:underline">Libro de Reclamaciones</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold uppercase tracking-wider text-xs mb-3.5 text-hm-dark">H&M Member Club</h4>
+          <p class="text-neutral-600 leading-relaxed mb-3">
+            Únete a nuestro programa y obtén un 10% de bienvenida + acumulación de puntos en todas las compras físicas y online.
+          </p>
+          <button class="bg-neutral-900 text-white text-xs font-bold uppercase tracking-widest px-4 py-2.5 hover:bg-neutral-800 transition">
+            Hazte Miembro
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Social & Legal Bottom Row -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-neutral-500 gap-4 text-center md:text-left">
+        <div class="flex items-center space-x-3">
+          <svg class="h-6 w-auto fill-hm-red" viewBox="0 0 102 54" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.74 38.38V15.62H15.62V24.58H25.74V15.62H33.62V38.38H25.74V29.58H15.62V38.38H7.74Z"/>
+            <path d="M49.62 38.86C45.26 38.86 42.02 36.3 42.02 31.86C42.02 28.58 44.1 26.34 47.78 24.9C45.38 23.66 44.02 21.74 44.02 19.46C44.02 16.26 46.86 13.98 50.74 13.98C54.62 13.98 57.18 16.34 57.18 19.78C57.18 22.38 55.46 24.34 52.54 25.46L49.02 26.86C46.82 27.74 45.66 28.98 45.66 30.74C45.66 32.74 47.38 34.1 49.74 34.1C51.98 34.1 53.66 32.9 54.58 30.82L57.54 32.54C56.14 36.14 53.3 38.86 49.62 38.86ZM50.42 22.42C51.94 22.42 53.06 21.34 53.06 19.98C53.06 18.66 52.02 17.74 50.62 17.74C49.18 17.74 48.14 18.7 48.14 19.98C48.14 21.34 49.06 22.42 50.42 22.42Z"/>
+            <path d="M66.42 38.38V15.62H73.22L80.98 29.38L88.74 15.62H95.54V38.38H88.74V24.5L82.14 35.86H79.82L73.22 24.5V38.38H66.42Z"/>
+          </svg>
+          <span class="text-[11px]">El contenido de este sitio está protegido por copyright y es propiedad de H&M Hennes & Mauritz AB.</span>
+        </div>
+
+        <div class="text-[11px] space-x-4">
+          <a href="#" class="hover:underline">Políticas de Privacidad</a>
+          <a href="#" class="hover:underline">Configuración de Cookies</a>
+          <a href="#" class="hover:underline">Chile (CLP)</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== LOGIC & SCRIPTS ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Navigation Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // CSAT State Engine
+    let totalReviews = 18420;
+    let totalScoreSum = 18420 * 4.71;
+    let selectedRating = 0;
+
+    const starCaptions = [
+      "Selecciona una valoración",
+      "1 estrella · Muy Insatisfecho",
+      "2 estrellas · Necesita Mejora",
+      "3 estrellas · Regular",
+      "4 estrellas · Muy Satisfecho",
+      "5 estrellas · ¡Excelente Experiencia!"
+    ];
+
+    function handleStarClick(rating) {
+      selectedRating = rating;
+      document.getElementById('chosenRatingValue').value = rating;
+      
+      const captionEl = document.getElementById('starCaption');
+      captionEl.innerText = starCaptions[rating];
+      captionEl.classList.remove('text-hm-red');
+
+      // Update Star Colors
+      const starButtons = document.querySelectorAll('.star-btn');
+      starButtons.forEach((btn, index) => {
+        if (index < rating) {
+          btn.classList.add('text-amber-400');
+          btn.classList.remove('text-neutral-300');
+        } else {
+          btn.classList.remove('text-amber-400');
+          btn.classList.add('text-neutral-300');
+        }
+      });
+    }
+
+    function submitCsatEvaluation(e) {
+      e.preventDefault();
+      const captionEl = document.getElementById('starCaption');
+
+      if (selectedRating === 0) {
+        captionEl.classList.add('text-hm-red');
+        captionEl.innerText = "Por favor selecciona de 1 a 5 estrellas";
+        return;
+      }
+
+      // Compute new values
+      totalReviews += 1;
+      totalScoreSum += selectedRating;
+
+      const newAverage = (totalScoreSum / totalReviews).toFixed(2);
+      const newPercentage = ((newAverage / 5) * 100).toFixed(1);
+
+      // Re-render KPI Hero Cards
+      document.getElementById('kpiBigScore').innerText = newAverage;
+      document.getElementById('totalReviewsCount').innerText = totalReviews.toLocaleString('es-CL');
+      document.getElementById('csatPercentText').innerText = `${newPercentage}% actual`;
+      document.getElementById('progressSummary').innerText = `${newPercentage}% / 95.0%`;
+      document.getElementById('csatProgressBar').style.width = `${Math.min(newPercentage, 100)}%`;
+
+      // Slightly reactively increment pillar based on checked categories
+      const checkedAreas = document.querySelectorAll('input[name="csatArea"]:checked');
+      checkedAreas.forEach(c => {
+        if (c.value === 'atencion') {
+          document.getElementById('pillarAtencionScore').innerText = "4.85 / 5.0";
+          document.getElementById('barAtencion').style.width = "97%";
+        } else if (c.value === 'tallas') {
+          document.getElementById('pillarTallasScore').innerText = "4.65 / 5.0";
+          document.getElementById('barTallas').style.width = "93%";
+        } else if (c.value === 'cambios') {
+          document.getElementById('pillarCambiosScore').innerText = "4.75 / 5.0";
+          document.getElementById('barCambios').style.width = "95%";
+        }
+      });
+
+      // Show success alert
+      const successBanner = document.getElementById('feedbackSuccess');
+      successBanner.classList.remove('hidden');
+      successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Reset form
+      document.getElementById('csatForm').reset();
+      handleStarClick(0);
+      captionEl.innerText = starCaptions[0];
+
+      lucide.createIcons();
+    }
+
+    // Catalog Filter Logic
+    function filterCatalog(size) {
+      const buttons = document.querySelectorAll('.filter-size-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === size) {
+          btn.classList.add('bg-neutral-900', 'text-white');
+          btn.classList.remove('bg-transparent', 'text-neutral-700', 'hover:bg-neutral-100');
+        } else {
+          btn.classList.remove('bg-neutral-900', 'text-white');
+          btn.classList.add('bg-transparent', 'text-neutral-700', 'hover:bg-neutral-100');
+        }
+      });
+
+      const cards = document.querySelectorAll('.product-card');
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const sizesAttr = card.getAttribute('data-sizes').split(',');
+        if (size === 'TODAS' || sizesAttr.includes(size)) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('visibleProductsCount').innerText = `${visibleCount} de ${cards.length}`;
+    }
+
+    // Store Filter Logic
+    function filterStoreList() {
+      const query = document.getElementById('storeFilterInput').value.toLowerCase();
+      const stores = document.querySelectorAll('.store-item');
+      stores.forEach(st => {
+        const text = st.innerText.toLowerCase();
+        if (text.includes(query)) {
+          st.style.display = 'flex';
+        } else {
+          st.style.display = 'none';
+        }
+      });
+    }
+
+    // Simulated QR Generator
+    function generateSimulatedQr() {
+      const boleta = document.getElementById('demoBoletaInput').value.trim() || 'HM-782104';
+      const cleanCode = boleta.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+      document.getElementById('qrCodeText').innerText = `PASE-EXPRESS-${cleanCode}`;
+      
+      showToast(`Pase Express generado para Boleta ${boleta}`);
+    }
+
+    // Toast Notification Utility
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    function addToBagNotice(name) {
+      showToast(`Agregaste "${name}" a tu bolsa de compra.`);
+    }
+
+    // Modal Control
+    function toggleModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
