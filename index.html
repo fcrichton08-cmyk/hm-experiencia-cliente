@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>H&M Chile | Experiencia de Compra & Tallas Extendidas</title>
   
+  <!-- Google Analytics 4 (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMCHILE2026"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // ID configurable: por defecto o desde localStorage
+    const GA_MEASUREMENT_ID = localStorage.getItem('GA_MEASUREMENT_ID') || 'G-HMCHILE2026';
+    gtag('config', GA_MEASUREMENT_ID, {
+      page_title: 'H&M Chile | Experiencia de Compra & Tallas Extendidas',
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter -->
@@ -1225,6 +1241,16 @@
       successBanner.classList.remove('hidden');
       successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
+      // Evento Google Analytics: Envío de Reseña CSAT
+      if (typeof gtag === 'function') {
+        gtag('event', 'submit_csat_review', {
+          event_category: 'satisfaccion',
+          event_label: 'Evaluación Experiencia',
+          rating: currentRating,
+          value: currentRating
+        });
+      }
+
       // Reset form
       document.getElementById('csatForm').reset();
       handleStarClick(0);
@@ -1235,6 +1261,13 @@
 
     // Catalog Filter Logic
     function filterCatalog(size) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'filter_size', {
+          event_category: 'catalogo_tallas',
+          size_selected: size
+        });
+      }
+
       const buttons = document.querySelectorAll('.filter-size-btn');
       buttons.forEach(btn => {
         if (btn.getAttribute('data-filter') === size) {
@@ -1281,6 +1314,13 @@
       const cleanCode = boleta.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
       document.getElementById('qrCodeText').innerText = `PASE-EXPRESS-${cleanCode}`;
       
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_qr_code', {
+          event_category: 'post_venta_express',
+          boleta_ref: boleta
+        });
+      }
+
       showToast(`Pase Express generado para Boleta ${boleta}`);
     }
 
@@ -1296,13 +1336,27 @@
     }
 
     function addToBagNotice(name) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'add_to_cart', {
+          event_category: 'ecommerce',
+          item_name: name
+        });
+      }
       showToast(`Agregaste "${name}" a tu bolsa de compra.`);
     }
 
     // Modal Control
     function toggleModal(id) {
       const modal = document.getElementById(id);
+      const isOpening = modal.classList.contains('hidden');
       modal.classList.toggle('hidden');
+
+      if (isOpening && typeof gtag === 'function') {
+        gtag('event', 'view_modal', {
+          event_category: 'interaccion',
+          modal_id: id
+        });
+      }
     }
   </script>
 </body>
